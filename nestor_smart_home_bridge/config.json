@@ -1,0 +1,7 @@
+{
+  "name": "Nestor Smart Home Bridge",
+  "version": "1.3.3",
+  "slug": "nestor_smart_home_bridge",
+  "arch": ["aarch64"],
+  "image": "acrnestorpoc.azurecr.io/nestor-bridge"
+}
