@@ -1,7 +1,7 @@
 {
   "name": "Nestor Enrollment",
   "version": "1.0.0",
-  "slug": "nestor_enrollment",
+  "slug": "nestor_smart_home_provisioning",
   "arch": ["aarch64"],
   "image": "acrnestorpoc.azurecr.io/nestor-enrollment"
 }
