@@ -1,6 +1,6 @@
 {
   "name": "Nestor Enrollment",
-  "version": "",
+  "version": "1.0.3",
   "slug": "nestor_smart_home_provisioning",
   "description": "Script provisionning",
   "arch": [
