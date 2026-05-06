@@ -1,6 +1,6 @@
 {
   "name": "Nestor Smart Home Bridge",
-  "version": "",
+  "version": "1.4.5",
   "slug": "nestor_smart_home_bridge",
   "description": "Bridge MQTT v5 <-> Home Assistant WebSocket for Nestor cloud",
   "arch": [
