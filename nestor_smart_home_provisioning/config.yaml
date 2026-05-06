@@ -8,6 +8,7 @@ arch:
   - "amd64"
   - "aarch64"
   - "armv7"
+image: "acrnestorpoc.azurecr.io/nestor_smart_home_provisioning"
 host_network: true
 map:
   - "ssl:rw"
