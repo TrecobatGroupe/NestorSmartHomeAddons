@@ -1,8 +1,10 @@
 {
   "name": "Nestor Enrollment",
-  "version": "1.0.0",
+  "version": "",
   "slug": "nestor_smart_home_provisioning",
   "description": "Script provisionning",
-  "arch": ["aarch64"],
+  "arch": [
+    "aarch64"
+  ],
   "image": "acrnestorpoc.azurecr.io/nestor-enrollment"
 }
