@@ -55,3 +55,4 @@ schema:
       - str
 map:
   - ssl:ro
+image: acrnestorpoc.azurecr.io/nestor_smart_home_bridge
