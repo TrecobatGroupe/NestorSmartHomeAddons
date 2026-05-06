@@ -6,5 +6,5 @@
   "arch": [
     "aarch64"
   ],
-  "image": "acrnestorpoc.azurecr.io/nestor-enrollment"
+  "image": "acrnestorpoc.azurecr.io/nestor_smart_home_provisioning"
 }
