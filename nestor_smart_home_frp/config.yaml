@@ -24,3 +24,4 @@ arch:
   - armhf
   - armv7
   - i386
+image: "acrnestorpoc.azurecr.io/nestor_smart_home_frp"
