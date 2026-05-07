@@ -1,11 +1,10 @@
 name: "FRP Proxy Client for HassIO"
-description: "This tool can be used to setup a FRP proxy to bypass portfowarding"
-version: "1.0.0"
+description: "This tool can be used to setup a FRP proxy to bypass portforwarding"
+version: "2.0.0"
 slug: "frp_client"
 init: false
 network: host
 startup: services
-init: false
 privileged:
   - NET_ADMIN
 devices:
@@ -14,10 +13,21 @@ host_network: true
 schema:
   serverip: str
   serverport: int
-  token: str?
   haport: int
-  encryption: bool?
-  compression: bool?
+  box_id: str
+  domain: str
+  tls_cert_file: str
+  tls_key_file: str
+  tls_ca_file: str
+options:
+  serverip: ""
+  serverport: 7000
+  haport: 8123
+  box_id: ""
+  domain: "frp.nestor-app.fr"
+  tls_cert_file: "/ssl/certs/device.crt"
+  tls_key_file: "/ssl/certs/device.key"
+  tls_ca_file: "/ssl/certs/ca.crt"
 arch:
   - aarch64
   - amd64
