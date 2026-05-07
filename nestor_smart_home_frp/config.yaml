@@ -15,7 +15,7 @@ schema:
   serverip: str
   serverport: int
   token: str?
-  haport : int
+  haport: int
   encryption: bool?
   compression: bool?
 arch:
@@ -24,4 +24,4 @@ arch:
   - armhf
   - armv7
   - i386
-image: "acrnestorpoc.azurecr.io/nestor_smart_home_frp"
+image: acrnestorpoc.azurecr.io/frp_client
