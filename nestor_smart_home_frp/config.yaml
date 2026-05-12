@@ -5,6 +5,8 @@ slug: "frp_client"
 init: false
 network: host
 startup: services
+map:
+  - ssl:rw
 privileged:
   - NET_ADMIN
 devices:
