@@ -19,18 +19,12 @@ schema:
   box_id: str
   box_token: str
   domain: str
-  tls_cert_file: str
-  tls_key_file: str
-  tls_ca_file: str
 options:
   serverip: ""
   serverport: 7000
   haport: 8123
   box_id: ""
   domain: "frp.nestor-app.fr"
-  tls_cert_file: "/ssl/certs/device.crt"
-  tls_key_file: "/ssl/certs/device.key"
-  tls_ca_file: "/ssl/certs/ca.crt"
 arch:
   - aarch64
   - amd64
