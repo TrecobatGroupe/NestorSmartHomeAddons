@@ -17,6 +17,7 @@ schema:
   serverport: int
   haport: int
   box_id: str
+  box_token: str
   domain: str
   tls_cert_file: str
   tls_key_file: str
