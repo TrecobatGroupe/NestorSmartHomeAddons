@@ -1,1 +1,25 @@
-
+name: "Nestor Smart Home Telemetry"
+version: "1.0.0"
+slug: "nestor_smart_home_telemetry"
+description: "Collecte et envoie les métriques système vers Grafana/InfluxDB"
+url: "https://github.com/TrecobatGroupe/NestorSmartHomeAddonsDev"
+image: "acrnestorpoc.azurecr.io/nestor_smart_home_telemetry"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+startup: services
+boot: auto
+init: false
+hassio_api: true
+homeassistant_api: true
+hassio_role: manager
+host_network: false
+map:
+  - ssl:ro
+options:
+  telegraf_url: "http://4.233.111.236:8186/telegraf"
+  interval: 1800
+schema:
+  telegraf_url: str
+  interval: int(10,)
