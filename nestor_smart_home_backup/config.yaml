@@ -1,5 +1,5 @@
 name: "Nestor Smart Home Backup"
-version: "1.1.0"
+version: "1.2.0"
 slug: "nestor_smart_home_backup"
 description: "Sauvegarde et synchronisation vers Azure Storage"
 url: "https://github.com/TrecobatGroupe/NestorSmartHomeAddonsDev"
