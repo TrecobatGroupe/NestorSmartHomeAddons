@@ -17,6 +17,6 @@ homeassistant_api: true
 hassio_role: "manager"
 map:
   - "ssl:rw"
-  - "homeassistant:rw"
+  - "homeassistant_config:rw"
 options: {}
 schema: {}
