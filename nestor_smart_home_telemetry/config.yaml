@@ -1,5 +1,5 @@
 name: "Nestor Smart Home Telemetry"
-version: "1.0.1"
+version: "1.0.0"
 slug: "nestor_smart_home_telemetry"
 description: "Collecte et envoie les métriques système vers Grafana/InfluxDB"
 url: "https://github.com/TrecobatGroupe/NestorSmartHomeAddonsDev"
