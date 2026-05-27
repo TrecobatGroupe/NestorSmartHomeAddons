@@ -18,7 +18,7 @@ host_network: false
 map:
   - ssl:ro
 options:
-  telegraf_url: "http://4.233.111.236:8186/telegraf"
+  telegraf_url: "https://4.233.111.236:8186/telegraf"
   interval: 1800
 schema:
   telegraf_url: str
