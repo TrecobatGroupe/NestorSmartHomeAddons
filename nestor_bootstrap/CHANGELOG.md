@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3
+
+- Version de test du canal de mise à jour à distance. Aucun changement fonctionnel.
+
 ## 0.3.2
 
 - image publiée dans le registry `distribution` de l'environnement (Container App) au lieu

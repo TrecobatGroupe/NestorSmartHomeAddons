@@ -1,5 +1,5 @@
 name: NESTOR Bootstrap
-version: "0.3.2"
+version: "0.3.3"
 slug: nestor_bootstrap
 description: Provisioning initial et renouvellement du certificat mTLS de la Box
 arch:
@@ -8,7 +8,7 @@ arch:
 startup: system
 boot: auto
 init: false
-image: ca-regapp-treco-nsh-dev-frc-01.thankfulsea-1c1e2824.francecentral.azurecontainerapps.io/nestor-bootstrap
+image: registry.dev.nestor-smarthome.com/nestor-bootstrap
 map:
   - ssl:rw
 devices:
