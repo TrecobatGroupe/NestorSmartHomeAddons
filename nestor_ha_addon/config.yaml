@@ -1,5 +1,5 @@
 name: Nestor HA Addon
-version: 0.12.2
+version: 0.12.3
 slug: nestor_ha_addon
 description: >-
   Addon Nestor — connecte Home Assistant (WebSocket) à Azure SignalR Serverless
@@ -15,7 +15,6 @@ init: false
 hassio_api: true
 hassio_role: manager
 homeassistant_api: true
-# Clé mTLS de la Box dans le TPM (ADR-019) : MQTT et negotiate la font signer.
 devices:
   - /dev/tpmrm0
 map:
@@ -40,13 +39,9 @@ options:
     hostname: ""
   registry:
     credential_url: "https://registry-auth.dev.nestor-smarthome.com/credential"
-  # Hôte du registre des add-ons, réécrit par la CI. Premier niveau : voir RegistryOptions.Server.
   registry_server: "registry.dev.nestor-smarthome.com"
 
-# Champs facultatifs absents d'options : masqués par défaut dans l'onglet
-# Configuration (« Afficher les options facultatives inutilisées »).
 schema:
-  # TCTI du TPM. Vide : /dev/tpmrm0 (Box). Dev (VM HAOS d'Aspire) : swtpm:host=10.0.2.2,port=2321
   tpm_tcti: str?
   signalr:
     negotiate_url: str
@@ -54,7 +49,6 @@ schema:
     entity_filter:
       - str
     temperature_history_hours: int(1,48)?
-  # Vide : le Supervisor refuse "" pour url? (vol.Url) ; str? l'accepte, l'add-on exige https.
   registry:
     credential_url: str?
   registry_server: str?
