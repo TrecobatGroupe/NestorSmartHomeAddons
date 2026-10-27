@@ -1,0 +1,38 @@
+name: NESTOR Bootstrap
+version: "0.3.2"
+slug: nestor_bootstrap
+description: Provisioning initial et renouvellement du certificat mTLS de la Box
+arch:
+  - amd64
+  - aarch64
+startup: system
+boot: auto
+init: false
+image: ca-regapp-treco-nsh-dev-frc-01.thankfulsea-1c1e2824.francecentral.azurecontainerapps.io/nestor-bootstrap
+map:
+  - ssl:rw
+devices:
+  - /dev/tpmrm0
+options:
+  home_id: ""
+  enrollment_token: ""
+  est_base_url: "https://est.nestor.trecobat.fr"
+  # Box sans TPM : vider identity_provider et identity_key_uri pour utiliser le token d'enrôlement.
+  identity_provider: "tpm2"
+  identity_key_uri: "handle:0x81000001"
+  # SRK persistante (usine) sous laquelle la clé mTLS est générée dans le TPM.
+  mtls_key_parent: "0x81000002"
+  # TCTI du TPM. Vide : /dev/tpmrm0 (Box). Dev (VM HAOS d'Aspire) : swtpm:host=10.0.2.2,port=2321
+  tpm_tcti: ""
+  renewal_threshold_days: 30
+  check_interval_hours: 12
+schema:
+  home_id: str?
+  enrollment_token: str?
+  est_base_url: url
+  identity_provider: str?
+  identity_key_uri: str?
+  mtls_key_parent: str?
+  tpm_tcti: str?
+  renewal_threshold_days: int(1,89)
+  check_interval_hours: int(1,24)
