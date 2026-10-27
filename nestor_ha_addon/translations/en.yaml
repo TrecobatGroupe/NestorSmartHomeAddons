@@ -1,0 +1,56 @@
+configuration:
+  tpm_tcti:
+    name: TPM TCTI
+    description: Optional. TCTI of the TPM holding the mTLS key. Empty uses /dev/tpmrm0 (Nestor Box). Development only (Aspire HAOS VM) - swtpm:host=10.0.2.2,port=2321.
+  signalr:
+    name: SignalR
+    description: Azure SignalR Serverless negotiate endpoint. The home id comes from the Box certificate (/ssl/client.crt).
+    fields:
+      negotiate_url:
+        name: Negotiate URL
+        description: Full URL of the Azure Functions negotiate endpoint (e.g. https://<functions>.azurewebsites.net/api/negotiate).
+  ha:
+    name: Home Assistant
+    description: Entity filtering. The add-on authenticates with the Supervisor token.
+    fields:
+      entity_filter:
+        name: Entity Filter
+        description: List of entity domain prefixes to observe (e.g. light., switch., sensor.).
+      temperature_history_hours:
+        name: Temperature History (hours)
+        description: Optional. Hours of temperature history to fetch on startup (1–48, default 12).
+  registry:
+    name: Add-on registry
+    description: Private registry of the Nestor add-ons. The add-on obtains its pull credential from the registry-auth service with the Box certificate (mTLS).
+    fields:
+      credential_url:
+        name: Credential URL
+        description: HTTPS URL of the registry-auth credential endpoint (e.g. https://<registry-auth>/credential). Without it, Nestor add-on updates are refused.
+  event_grid_mqtt:
+    name: Event Grid MQTT
+    description: Direct MQTT connection to Azure Event Grid (mTLS) with the certificate written by Nestor Bootstrap.
+    fields:
+      enabled:
+        name: Enabled
+        description: Enable the direct Event Grid MQTT connection.
+      hostname:
+        name: Hostname
+        description: Event Grid namespace MQTT hostname.
+      port:
+        name: Port
+        description: Optional. MQTT port (default 8883).
+      client_id:
+        name: Client ID
+        description: Optional. MQTT client ID; empty uses the home id.
+      cert_path:
+        name: Certificate Path
+        description: Optional. Client certificate (default /ssl/client.crt, written by Nestor Bootstrap). The Nestor CA bundle ca.pem is read from the same folder.
+      key_path:
+        name: Key Path
+        description: Optional. Client private key (default /ssl/private.key, written by Nestor Bootstrap).
+      use_tls:
+        name: Use TLS
+        description: Optional. Connect with TLS and client certificate (default). Disable only for a local plain MQTT broker in development.
+      temperature_report_interval_minutes:
+        name: Temperature Report Interval (min)
+        description: Optional. How often to report temperature to Azure Event Grid (1–1440 minutes, default 15).

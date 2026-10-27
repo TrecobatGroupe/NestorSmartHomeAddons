@@ -1,0 +1,66 @@
+name: Nestor HA Addon
+version: 0.12.1
+slug: nestor_ha_addon
+description: >-
+  Addon Nestor — connecte Home Assistant (WebSocket) à Azure SignalR Serverless
+  (commandes et inventaire Digital Twin) et publie la télémétrie vers Azure
+  Event Grid MQTT.
+image: ca-regapp-treco-nsh-dev-frc-01.thankfulsea-1c1e2824.francecentral.azurecontainerapps.io/nestor-ha-addon
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+init: false
+hassio_api: true
+hassio_role: manager
+homeassistant_api: true
+# Clé mTLS de la Box dans le TPM (ADR-019) : MQTT et negotiate la font signer.
+devices:
+  - /dev/tpmrm0
+map:
+  - ssl:ro
+  - config:rw
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:swap-horizontal-bold
+panel_title: Nestor HA Addon
+
+options:
+  signalr:
+    negotiate_url: "https://<functions>.azurewebsites.net/api/negotiate"
+  ha:
+    entity_filter:
+      - "light."
+      - "switch."
+      - "sensor."
+      - "binary_sensor."
+  event_grid_mqtt:
+    enabled: false
+    hostname: ""
+  registry:
+    credential_url: "https://ca-regauth-treco-nsh-dev-frc-01.thankfulsea-1c1e2824.francecentral.azurecontainerapps.io/credential"
+
+# Champs facultatifs absents d'options : masqués par défaut dans l'onglet
+# Configuration (« Afficher les options facultatives inutilisées »).
+schema:
+  # TCTI du TPM. Vide : /dev/tpmrm0 (Box). Dev (VM HAOS d'Aspire) : swtpm:host=10.0.2.2,port=2321
+  tpm_tcti: str?
+  signalr:
+    negotiate_url: str
+  ha:
+    entity_filter:
+      - str
+    temperature_history_hours: int(1,48)?
+  # Vide : le Supervisor refuse "" pour url? (vol.Url) ; str? l'accepte, l'add-on exige https.
+  registry:
+    credential_url: str?
+  event_grid_mqtt:
+    enabled: bool
+    hostname: str
+    port: int(1,65535)?
+    client_id: str?
+    cert_path: str?
+    key_path: str?
+    use_tls: bool?
+    temperature_report_interval_minutes: int(1,1440)?
