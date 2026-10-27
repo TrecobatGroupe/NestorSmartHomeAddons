@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.2
+
+- Correctif : la mise à jour à distance d'un add-on Nestor échouait toujours en « Registre
+  inattendu ». L'hôte du registre était lu dans l'image renvoyée par `/addons/self/info`, que le
+  Supervisor n'expose pas. Il vient maintenant de la nouvelle option `registry_server`, réécrite
+  à la publication comme `image:` et `registry.credential_url`. Option vide ou non réécrite :
+  échec « Registre des add-ons non configuré », sans demande de credential.
+
 ## 0.12.1
 
 - image publiée dans le registry `distribution` de l'environnement (Container App) au lieu
