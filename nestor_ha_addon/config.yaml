@@ -5,7 +5,7 @@ description: >-
   Addon Nestor — connecte Home Assistant (WebSocket) à Azure SignalR Serverless
   (commandes et inventaire Digital Twin) et publie la télémétrie vers Azure
   Event Grid MQTT.
-image: ca-regapp-treco-nsh-dev-frc-01.thankfulsea-1c1e2824.francecentral.azurecontainerapps.io/nestor-ha-addon
+image: registry.dev.nestor-smarthome.com/nestor-ha-addon
 arch:
   - amd64
   - aarch64
@@ -39,7 +39,7 @@ options:
     enabled: false
     hostname: ""
   registry:
-    credential_url: "https://ca-regauth-treco-nsh-dev-frc-01.thankfulsea-1c1e2824.francecentral.azurecontainerapps.io/credential"
+    credential_url: "https://registry-auth.dev.nestor-smarthome.com/credential"
 
 # Champs facultatifs absents d'options : masqués par défaut dans l'onglet
 # Configuration (« Afficher les options facultatives inutilisées »).
