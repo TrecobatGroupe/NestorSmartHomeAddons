@@ -1,5 +1,5 @@
 name: Nestor HA Addon
-version: 0.13.0
+version: 0.13.2
 slug: nestor_ha_addon
 description: >-
   Addon Nestor — connecte Home Assistant (WebSocket) à Azure SignalR Serverless
