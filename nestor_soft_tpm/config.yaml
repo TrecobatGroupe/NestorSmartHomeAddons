@@ -1,0 +1,21 @@
+name: NESTOR Soft TPM (dev)
+version: "0.1.0"
+slug: nestor_soft_tpm
+description: "Dev/UAT : TPM 2.0 logiciel (swtpm) pour une Box sans puce, avec étape « usine » intégrée (clé d'identité 0x81000001, SRK 0x81000002, inventaire)"
+arch:
+  - aarch64
+  - amd64
+startup: services
+boot: auto
+init: false
+image: registry.dev.nestor-smarthome.com/nestor-soft-tpm
+map:
+  - share:rw
+options:
+  serial_number: "DEV-RPI-001"
+  owner_auth: ""
+  force_reset: false
+schema:
+  serial_number: str
+  owner_auth: password
+  force_reset: bool
