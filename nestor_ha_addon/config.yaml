@@ -1,5 +1,5 @@
 name: Nestor HA Addon
-version: 0.14.0
+version: 0.15.1
 slug: nestor_ha_addon
 description: >-
   Addon Nestor — connecte Home Assistant (WebSocket) à Azure SignalR Serverless
@@ -40,6 +40,8 @@ options:
   registry:
     credential_url: "https://registry-auth.dev.nestor-smarthome.com/credential"
   registry_server: "registry.dev.nestor-smarthome.com"
+  tunnel:
+    enabled: true
 
 schema:
   tpm_tcti: str?
@@ -52,6 +54,10 @@ schema:
   registry:
     credential_url: str?
   registry_server: str?
+  tunnel:
+    enabled: bool?
+    host: str?
+    port: int(1,65535)?
   event_grid_mqtt:
     enabled: bool
     hostname: str
