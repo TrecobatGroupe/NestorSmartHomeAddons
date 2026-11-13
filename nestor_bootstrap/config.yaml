@@ -1,5 +1,5 @@
 name: NESTOR Bootstrap
-version: "0.4.2"
+version: "0.5.1"
 slug: nestor_bootstrap
 description: Provisioning initial et renouvellement du certificat mTLS de la Box
 arch:
@@ -8,6 +8,8 @@ arch:
 startup: system
 boot: auto
 init: false
+hassio_api: true
+hassio_role: manager
 image: registry.dev.nestor-smarthome.com/nestor-bootstrap
 map:
   - ssl:rw
