@@ -1,5 +1,5 @@
 name: NESTOR Bootstrap
-version: "0.5.2"
+version: "0.5.3"
 slug: nestor_bootstrap
 description: Provisioning initial et renouvellement du certificat mTLS de la Box
 arch:
