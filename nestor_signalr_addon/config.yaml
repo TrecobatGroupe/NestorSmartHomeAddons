@@ -1,5 +1,5 @@
 name: Nestor SignalR
-version: 1.0.0
+version: 1.0.1
 slug: nestor_signalr_addon
 description: >-
   Addon Nestor — relie Home Assistant (WebSocket) à Azure SignalR Serverless :
@@ -37,9 +37,6 @@ options:
 
 schema:
   tpm_tcti: str?
-  identity:
-    cert_path: str?
-    key_path: str?
   signalr:
     negotiate_url: str
   ha:
@@ -51,5 +48,3 @@ schema:
   registry_server: str?
   tunnel:
     enabled: bool?
-    host: str?
-    port: int(1,65535)?
