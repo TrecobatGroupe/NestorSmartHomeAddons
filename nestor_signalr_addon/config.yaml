@@ -1,0 +1,55 @@
+name: Nestor SignalR
+version: 1.0.0
+slug: nestor_signalr_addon
+description: >-
+  Addon Nestor — relie Home Assistant (WebSocket) à Azure SignalR Serverless :
+  commandes, inventaire Digital Twin, mises à jour, administration et accès distant du support.
+image: registry.dev.nestor-smarthome.com/nestor-signalr-addon
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+init: false
+hassio_api: true
+hassio_role: manager
+homeassistant_api: true
+devices:
+  - /dev/tpmrm0
+map:
+  - ssl:ro
+  - config:rw
+
+options:
+  signalr:
+    negotiate_url: "https://<functions>.azurewebsites.net/api/negotiate"
+  ha:
+    entity_filter:
+      - "light."
+      - "switch."
+      - "sensor."
+      - "binary_sensor."
+  registry:
+    credential_url: "https://registry-auth.dev.nestor-smarthome.com/credential"
+  registry_server: "registry.dev.nestor-smarthome.com"
+  tunnel:
+    enabled: true
+
+schema:
+  tpm_tcti: str?
+  identity:
+    cert_path: str?
+    key_path: str?
+  signalr:
+    negotiate_url: str
+  ha:
+    entity_filter:
+      - str
+    temperature_history_hours: int(1,48)?
+  registry:
+    credential_url: str?
+  registry_server: str?
+  tunnel:
+    enabled: bool?
+    host: str?
+    port: int(1,65535)?
