@@ -1,5 +1,5 @@
 name: NESTOR Wi-Fi AP
-version: "0.1.0"
+version: "0.1.2"
 slug: nestor_wifi_ap
 description: Wi-Fi d'identification de la Box (point d'accès NESTOR-<n° de série>), ouvert tant que l'Ethernet n'a pas d'IP
 arch:
