@@ -1,0 +1,13 @@
+name: NESTOR Wi-Fi AP
+version: "0.1.0"
+slug: nestor_wifi_ap
+description: Wi-Fi d'identification de la Box (point d'accès NESTOR-<n° de série>), ouvert tant que l'Ethernet n'a pas d'IP
+arch:
+  - aarch64
+  - amd64
+startup: system
+boot: auto
+init: false
+hassio_api: true
+hassio_role: manager
+image: registry.dev.nestor-smarthome.com/nestor-wifi-ap
