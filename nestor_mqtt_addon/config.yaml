@@ -1,5 +1,5 @@
 name: Nestor MQTT
-version: 1.2.7
+version: 1.2.8
 slug: nestor_mqtt_addon
 description: >-
   Addon Nestor — publie la télémétrie de Home Assistant (températures) vers Azure Event Grid MQTT.
