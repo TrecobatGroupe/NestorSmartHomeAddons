@@ -1,5 +1,5 @@
 name: Nestor SignalR
-version: 1.5.5
+version: 1.5.6
 slug: nestor_signalr_addon
 description: >-
   Addon Nestor — relie Home Assistant (WebSocket) à Azure SignalR Serverless :
