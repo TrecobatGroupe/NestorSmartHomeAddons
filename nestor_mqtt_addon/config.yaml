@@ -1,8 +1,8 @@
 name: Nestor MQTT
-version: 1.2.12
+version: 1.3.0
 slug: nestor_mqtt_addon
 description: >-
-  Addon Nestor — publie la télémétrie de Home Assistant (températures) vers Azure Event Grid MQTT.
+  Addon Nestor — publie la télémétrie de Home Assistant (états d'entités) vers Azure Event Grid MQTT.
 image: registry.dev.nestor-smarthome.com/nestor-mqtt-addon
 arch:
   - amd64
@@ -20,6 +20,8 @@ options:
   event_grid_mqtt:
     hostname: ""
     use_tls: true
+    telemetry_device_classes:
+      - sensor:temperature
 
 schema:
   tpm_tcti: str?
@@ -28,4 +30,6 @@ schema:
     port: int(1,65535)?
     client_id: str?
     use_tls: bool?
-    temperature_report_interval_minutes: int(1,1440)?
+    telemetry_report_interval_minutes: int(1,1440)?
+    telemetry_device_classes:
+      - list(sensor:absolute_humidity|sensor:apparent_power|sensor:aqi|sensor:area|sensor:atmospheric_pressure|sensor:battery|sensor:blood_glucose_concentration|sensor:carbon_dioxide|sensor:carbon_monoxide|sensor:conductivity|sensor:current|sensor:data_rate|sensor:data_size|sensor:date|sensor:distance|sensor:duration|sensor:energy|sensor:energy_distance|sensor:energy_storage|sensor:enum|sensor:frequency|sensor:gas|sensor:humidity|sensor:illuminance|sensor:irradiance|sensor:moisture|sensor:monetary|sensor:nitrogen_dioxide|sensor:nitrogen_monoxide|sensor:nitrous_oxide|sensor:ozone|sensor:ph|sensor:pm1|sensor:pm10|sensor:pm25|sensor:pm4|sensor:power|sensor:power_factor|sensor:precipitation|sensor:precipitation_intensity|sensor:pressure|sensor:reactive_energy|sensor:reactive_power|sensor:signal_strength|sensor:sound_pressure|sensor:speed|sensor:sulphur_dioxide|sensor:temperature|sensor:timestamp|sensor:volatile_organic_compounds|sensor:volatile_organic_compounds_parts|sensor:voltage|sensor:volume|sensor:volume_flow_rate|sensor:volume_storage|sensor:water|sensor:weight|sensor:wind_direction|sensor:wind_speed|binary_sensor:battery|binary_sensor:battery_charging|binary_sensor:carbon_monoxide|binary_sensor:cold|binary_sensor:connectivity|binary_sensor:door|binary_sensor:garage_door|binary_sensor:gas|binary_sensor:heat|binary_sensor:light|binary_sensor:lock|binary_sensor:moisture|binary_sensor:motion|binary_sensor:moving|binary_sensor:occupancy|binary_sensor:opening|binary_sensor:plug|binary_sensor:power|binary_sensor:presence|binary_sensor:problem|binary_sensor:running|binary_sensor:safety|binary_sensor:smoke|binary_sensor:sound|binary_sensor:tamper|binary_sensor:update|binary_sensor:vibration|binary_sensor:window|number:absolute_humidity|number:apparent_power|number:aqi|number:area|number:atmospheric_pressure|number:battery|number:blood_glucose_concentration|number:carbon_dioxide|number:carbon_monoxide|number:conductivity|number:current|number:data_rate|number:data_size|number:distance|number:duration|number:energy|number:energy_distance|number:energy_storage|number:frequency|number:gas|number:humidity|number:illuminance|number:irradiance|number:moisture|number:monetary|number:nitrogen_dioxide|number:nitrogen_monoxide|number:nitrous_oxide|number:ozone|number:ph|number:pm1|number:pm10|number:pm25|number:pm4|number:power|number:power_factor|number:precipitation|number:precipitation_intensity|number:pressure|number:reactive_energy|number:reactive_power|number:signal_strength|number:sound_pressure|number:speed|number:sulphur_dioxide|number:temperature|number:volatile_organic_compounds|number:volatile_organic_compounds_parts|number:voltage|number:volume|number:volume_flow_rate|number:volume_storage|number:water|number:weight|number:wind_speed|cover:awning|cover:blind|cover:curtain|cover:damper|cover:door|cover:garage|cover:gate|cover:shade|cover:shutter|cover:window|switch:outlet|switch:switch|humidifier:humidifier|humidifier:dehumidifier|valve:water|valve:gas|update:firmware|media_player:tv|media_player:speaker|media_player:receiver|event:button|event:doorbell|event:motion|button:identify|button:restart|button:update)
